@@ -309,9 +309,27 @@
     <axis
       xyz="0 0 0" />
   </joint>
+
   //change gazebo characteristic
   <gazebo reference="base_link">
       <material>Gazebo/Yellow </material>
   </gazebo>
+
+  <gazebo reference="Wheel_Link">
+        <material>Gazebo/Black </material>
+  </gazebo>
+  <gazebo reference="Wheel2_Link">
+          <material>Gazebo/Black </material>
+  </gazebo>
+  <gazebo reference="Wheel3_Link">
+          <material>Gazebo/Black </material>
+  </gazebo>
+  <gazebo reference="Wheel4_Link">
+          <material>Gazebo/Black </material>
+  </gazebo>
+  <gazebo reference="Laser_Link">
+          <material>Gazebo/Red </material>
+  </gazebo>
+
 </robot>
 
