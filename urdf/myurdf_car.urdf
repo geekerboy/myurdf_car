@@ -309,9 +309,9 @@
     <axis
       xyz="0 0 0" />
   </joint>
+  //change gazebo characteristic
+  <gazebo reference="base_link">
+      <material>Gazebo/Yellow </material>
+  </gazebo>
 </robot>
 
-//change gazebo characteristic
-<gazebo reference="base_link">
-    <material>Gazebo/yellow </material>
-</gazebo>
