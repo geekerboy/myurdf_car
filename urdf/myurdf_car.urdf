@@ -310,8 +310,8 @@
       xyz="0 0 0" />
   </joint>
 </robot>
-//123
+
 //change gazebo characteristic
 <gazebo reference="base_link">
-    <material>Gazebo/yellow </material>
+    <material>Gazebo/Yellow </material>
 </gazebo>
