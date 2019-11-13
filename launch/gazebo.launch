@@ -4,7 +4,7 @@
     <!-- <arg name="world_name" value="$(find robot_sim_demo)/worlds/ROS-Academy.world"/> -->
    <arg name="world_name" value="$(find myurdf_car)/world/myworld.world"/>
   </include>
-  //change the code by the tutorial https://blog.csdn.net/Hu_weichen/article/details/86708684
+<!--  //change the code by the tutorial https://blog.csdn.net/Hu_weichen/article/details/86708684-->
 <!--  <node-->
 <!--    name="tf_footprint_base"-->
 <!--    pkg="tf"-->
