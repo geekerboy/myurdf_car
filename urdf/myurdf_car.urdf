@@ -2,8 +2,7 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<link
-  name="myurdf_car">
+<robot name="myurdf_car">
   <link
     name="base_link">
     <inertial>
@@ -43,12 +42,6 @@
       </geometry>
     </collision>
   </link>
-
-  <link
-
-
-  </link>
-
 
   <link
     name="Wheel_Link">
@@ -103,9 +96,6 @@
     <axis
       xyz="0 1 0" />
   </joint>
-
-
-
 
   <link
     name="Wheel2_Link">
@@ -370,55 +360,6 @@
                   <frameName>base_link</frameName>
                 </plugin>
               </sensor>
-
   </gazebo>
-
-  <!-- add Drive controller......................................  -->
-  <gazebo>
-    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
-
-
-      <alwaysOn>true</alwaysOn>
-
-      <updateRate>5</updateRate>
-      <robotNamespace>/</robotNamespace>
-
-     <leftFrontJoint>Wheel_Joint</leftFrontJoint>
-
-     <rightFrontJoint>Wheel4_Joint</rightFrontJoint>
-
-     <leftRearJoint>Wheel2_Joint</leftRearJoint>
-
-      <rightRearJoint>Wheel3_Joint</rightRearJoint>
-
-
-       <wheelSeparation>0.36</wheelSeparation>   <!--the distance between left wheel and right wheel (it's uint is meter)-->
-
-      <wheelDiameter>0.079</wheelDiameter>       <!--the value of the wheel radius  -->
-
-      <torque>20</torque>
-
-      <commandTopic>cmd_vel</commandTopic>
-
-      <odometryTopic>odom</odometryTopic>
-
-      <odometryFrame>odom</odometryFrame>
-
-      <robotBaseFrame>base_footprint</robotBaseFrame>
-
-      <broadcastTF>1</broadcastTF>
-
-    </plugin>
-  </gazebo>
-
-    <!-- ros_control plugin .....................-->
-    <gazebo>
-        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-            <robotNamespace>/robot</robotNamespace>
-        </plugin>
-    </gazebo>
-
-
-
 </robot>
 
