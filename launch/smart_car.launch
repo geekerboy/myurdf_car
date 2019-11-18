@@ -1,9 +1,19 @@
 <launch>
-    <arg name="model"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+
     <arg name="gui" default="false"/>
     <param name="robot_description" textfile="$(find myurdf_car)/urdf/smart_car.urdf"/>
     <param name="use_gui" value="$(arg gui)"/>
+
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find myurdf_car)/urdf.rviz"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find myurdf_car)/urdf.rviz" required="true" />
+
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-urdf -model mrobot -param robot_description"/>
+
+
+
 </launch>
