@@ -222,7 +222,4 @@
             <legacyModeNS>true</legacyModeNS>
         </plugin>
     </gazebo>
-
-
-
 </robot>
