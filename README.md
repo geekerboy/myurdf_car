@@ -1,8 +1,10 @@
 # 四轮小车底盘模型
 由Solidworks建模利用插件导出模型<br>
 
+#### Todo
+* 用xacro改写小车模型,现在主流的建模都是xacro
 #### 小车运动
-* 向cmd_vel话题发布速度信息，小车可以运动(可以直接用turtlesim里面的键盘控制)
+* 向turtle1/cmd_vel话题发布速度信息，小车可以运动(可以直接用turtlesim里面的键盘控制)
 #### 一些说明
 * Solidworks生成的只是模型，没有运动控制插件
 * 小车的代码主要更新在**smart_car.urdf**文件里，直接运行这个launch文件就可以看到效果

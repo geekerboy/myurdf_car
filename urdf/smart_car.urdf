@@ -205,7 +205,7 @@
             <rightRearJoint>right_back_wheel_joint</rightRearJoint>
             <wheelSeparation>0.17</wheelSeparation>
             <wheelDiameter>0.05</wheelDiameter>
-            <commandTopic>cmd_vel</commandTopic>
+            <commandTopic>turtle1/cmd_vel</commandTopic>
             <odometryTopic>odom</odometryTopic>
             <robotBaseFrame>base_footprint</robotBaseFrame>
             <odometryFrame>odom</odometryFrame>
