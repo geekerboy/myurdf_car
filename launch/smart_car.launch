@@ -7,14 +7,12 @@
     <arg name="gui" default="false"/>
     <param name="robot_description" textfile="$(find myurdf_car)/urdf/smart_car.urdf"/>
     <param name="use_gui" value="$(arg gui)"/>
-
+    <arg name="rviz_flag" default="false"/>
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find myurdf_car)/urdf.rviz" required="true" />
-
+    <group if="$(arg rviz_flag)" >
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find myurdf_car)/urdf.rviz" required="true" />
+    </group>
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
           args="-urdf -model myrobot -param robot_description -x 0 -y 0"/>
-
-
-
 </launch>
