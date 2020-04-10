@@ -1,13 +1,22 @@
 <launch>
 
-    <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(find myurdf_car)/world/myworld.world"/>
-    </include>
-
     <arg name="gui" default="false"/>
     <param name="robot_description" textfile="$(find myurdf_car)/urdf/smart_car.urdf"/>
     <param name="use_gui" value="$(arg gui)"/>
     <arg name="rviz_flag" default="false"/>
+    <arg name="world_flag" default="true"/>
+
+
+    <group if="$(arg world_flag)">
+        <include file="$(find gazebo_ros)/launch/empty_world.launch">
+            <arg name="world_name" value="$(find myurdf_car)/world/smart_car.world"/>
+        </include>
+    </group>
+    <group unless="$(arg world_flag)">
+        <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        </include>
+    </group>
+
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
     <group if="$(arg rviz_flag)" >
